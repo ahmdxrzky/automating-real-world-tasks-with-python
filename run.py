@@ -4,45 +4,44 @@
 # To do this, you'll need to write a script to convert those .txt files and process them into Python dictionaries,
 # then upload the data onto your company's website (currently using Django).
 
-# What I've done?
-# Import some external libraries __ (1)
-# Move working directory to folder that contains feedback files __ (2)
-# Iterate through each feedback files __ (3)
-# Use try-except and regex to ensure that only txt files being processed __ (4)
-# Read each lines on the a file and add those lines as a dictionary __ (5)
-# Join all dictionaries to a list __ (6)
-# Iterate through each components on the list and post it to web one by one ___ (7)
-
 #!/usr/bin/env python3
-# (1)
+# Import some external libraries
 import os
 import requests
 import re
 
-# (2)
+# Change working dir to the directory contains feedback from users
 os.chdir('/data/feedback')
+
+# Define a list as a place for storing feedbacks from files
 display = []
 
-# (3)
+# Iterate through each file
+sum_of_txt = 0
+sum_of_feedback = 0
 for file in os.listdir():
+  # Use try-except procedure and regex to ensure that only a txt file is being opened
   try:
-    # (4)
-    re.search(r"(.txt)$", os.path.abspath(file))
     if re.search(r"(.txt)$", os.path.abspath(file)) != None:
-      # (5)
       with open(os.path.abspath(file), 'r') as txt_file:
+        sum_of_txt += 1
         lines = txt_file.readlines()
         display_dict = {}
         display_dict['title'] = lines[0].strip()
         display_dict['name'] = lines[1].strip()
         display_dict['date'] = lines[2].strip()
         display_dict['feedback'] = lines[3].strip()
-        # (6)
         display.append(display_dict)
+        sum_of_feedback += 1
   except IsADirectoryError:
     pass
 
-# (7)
+# Iterate through each feedback and post it to the web service
+success_status_code = 0
 for component in display:
-  response = requests.post('http://34.70.131.158/feedback/', data = component)
-  print(response.status_code)
+  response = requests.post('http://35.238.177.139/feedback/', data = component)
+  if response.status_code == 201:
+    success_status_code += 1
+
+# Write a response to ensure that code script executed properly
+print("{} feedbacks from {}/{} files has been uploaded successfully.".format(success_status_code, sum_of_feedback, sum_of_txt))
