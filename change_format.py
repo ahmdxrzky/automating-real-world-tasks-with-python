@@ -4,49 +4,43 @@
 # Oof! You're not able to get in contact with the designers and your own deadline is approaching fast.
 # You'll need to use Python to get these images ready for launch.
 
-# What I've done?
-# Import some external libraries __ (1)
-# Move working directory to folder that contains target files __ (2)
-# Iterate through each file __ (3)
-# Use try-except method to ensure only image file being opened __ (4)
-# Use regex to ensure format change procedure only done to unmanipulated file __ (5)
-# Manipulate image file with rotate, resize, and rename it __ (6)
-# Move the file to a target folder __ (7)
-
 #!/usr/bin/env python3
-# (1)
+# Import few external libraries
 import PIL
 from PIL import Image
 import os
 import re
 import subprocess
 
-# (2)
+# Change working dir to the directory contains pictures for manipulation process
 os.chdir("images")
 
-# (3)
-for pic in os.listdir():
-  # (4)
-  # Check is the file is a image file
-  # If yes, open the file
+# Iterate through each file in the directory
+sum_of_picture = 0
+sum_of_manipulated_picture = 0
+for picture_file in os.listdir():
+  # Use try-except scenario to ensure the file is an image
+  # If the file is not an image, an error of UnidentifiedImageError will be raised and the file will be passed
   try:
-    im = Image.open(pic)
-    new_pic = im.convert('RGB')
+    picture = Image.open(picture_file)
+    sum_of_picture += 1
+    converted_picture = picture.convert('RGB')
 
-    # Replace format of the file
-    name = re.sub(r"(.tiff)$", "", pic)
+    # Replace format of the file (delete .tiff part and replaced it with some customized name in format .jpeg)
+    name = re.sub(r"(.tiff)$", "", picture_file)
     new_name = name + "_rotated_and_resized.jpeg"
-    
-    # (5)
-    # Check is the file has been manipulated
+
+    # Check if the file has been manipulated
     # If no, rotate, resize, and save with a new name in certain directory
-    if re.search("_rotated_and_resized.jpeg", pic) == None:
-      # (6)
-      new_pic.rotate(-90).resize((128,128)).save(new_name)
+    if re.search("_rotated_and_resized.jpeg", picture_file) == None:
+      converted_picture.rotate(-90).resize((128,128)).save(new_name)
       old_place = os.path.abspath(new_name)
-      new_place = "/opt/icons/"+ new_name
-      # (7)
+      new_place = "/opt/icons/" + new_name
       subprocess.run(["mv", old_place, new_place])
+      sum_of_manipulated_picture += 1
 
   except PIL.UnidentifiedImageError:
     pass
+
+# Write a response to ensure that script executed properly
+print("{}/{} pictures has been manipulated successfully.".format(sum_of_manipulated_picture, sum_of_picture))
