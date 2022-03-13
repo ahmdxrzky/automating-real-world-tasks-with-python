@@ -4,16 +4,8 @@
 # The company already has a web service which serves sales data at the end of every month,
 # but management wants an email to be sent out with an attached PDF so that data is more easily readable.
 
-# What I've done?
-# Import some external libraries __ (1)
-# Complete process_data function, so it retrieved cars with maximum total sales and year with maximum total sales __ (2)
-# Define cars_dict_to_table_by_total_sales function, so it retrieved a sorted list of cars by total sales __ (3)
-# Define generate_optional function, so it retrieved PDF file with table and pie chart consist of 10 most sales cars __ (4)
-# Send those PDF files to the emails with their own criteria __ (5)
-
 #!/usr/bin/env python3
-
-# (1)
+# Import some external libraries
 import json
 import locale
 import sys
@@ -52,7 +44,6 @@ def process_data(data):
     if item_revenue > max_revenue["revenue"]:
       item["revenue"] = item_revenue
       max_revenue = item
-    # (2)
     # TODO: also handle max sales
     if item["total_sales"] > max_sales["total_sales"]:
       max_sales = item
@@ -87,7 +78,6 @@ def cars_dict_to_table(car_data):
     table_data.append([item["id"], format_car(item["car"]), item["price"], item["total_sales"]])
   return table_data
 
-# (3)
 def cars_dict_to_table_by_total_sales(car_data):
   """Turns the data in car_data into a list of lists sorted by its total sales"""
   table_data = []
@@ -96,8 +86,8 @@ def cars_dict_to_table_by_total_sales(car_data):
   table_data = sorted(table_data, key = itemgetter(3), reverse = True)
   return table_data
 
-# (4)
 def generate_optional(filename, title, additional_info, table_data):
+  """Create a PDF file with Table and Pie Chart of 10 cars with most total of sales."""
   from reportlab.platypus import SimpleDocTemplate
   from reportlab.platypus import Paragraph, Spacer, Table, Image
   from reportlab.lib.styles import getSampleStyleSheet
@@ -137,7 +127,6 @@ def main(argv):
   table_data = cars_dict_to_table(data)
   reports.generate("/tmp/cars.pdf", "Sales summary for last month", "{} <br/>{} <br/>{}".format(summary[0], summary[1], summary[2]), table_data)
 
-  # (5)
   # TODO: send the PDF report as an email attachment
   sender = "automation@example.com"
   receiver = "{}@example.com".format(os.environ.get('USER'))
@@ -152,7 +141,6 @@ def main(argv):
     table_data.append([item["id"], format_car(item["car"]), item["price"], item["total_sales"]])
   table_data = sorted(table_data, key = itemgetter(3), reverse = True)
 
-  # (5)
   generate_optional("/tmp/cars_optional.pdf", "An Extra Report of Car Sales", "Table sorted by total sales and a pie chart created.", table_data)
 
   sender = "automation@example.com"
