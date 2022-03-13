@@ -8,8 +8,8 @@
 In the final course of this specialization, learners will tie together the concepts that they’ve learned. They'll tackle real-world scenarios in Qwiklabs that will challenge learners to use multiple skills at once. There are four projects need to be solved by learners. Scenario, algorithm, and script code for each project is attached below.
 <br><br>
 
-First Project: [Manipulating Images (change_format.py)](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python-coursera/blob/main/change_format.py) <br>
-Second Project: [Interacting with Web Services (run.py)](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python-coursera/blob/main/run.py) <br>
-Third Project: [Automatic Output Generation (cars.py)](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python-coursera/blob/main/cars.py) <br>
-Fourth Project: [Putting it All Together](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python-coursera/blob/main/fourth_project.md). 
+First Project: [Manipulating Images (change_format.py)](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python/blob/main/change_format.py) <br>
+Second Project: [Interacting with Web Services (run_feedback.py)](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python/blob/main/run_feedback.py) <br>
+Third Project: [Automatic Output Generation (cars.py)](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python/blob/main/cars.py). <br>
+Fourth Project: [Putting it All Together](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python/blob/main/fourth_project.md). 
 (since it's a complex project, I've refer the link above to another manual file).
