@@ -13,10 +13,10 @@ Finally, in parallel to the automation running, we want to check the health of t
 <br><br>
 
 What I've done? <br>
-1. Create a script to change format of pictures from .tiff to .jpeg and resize it --> [changeImage.py](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python/blob/main/changeImage.py) <br>
-2. Create a script to upload all of manipulated pictures in .jpeg format --> [supplier_image_upload.py](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python/blob/main/supplier_image_upload.py) <br>
-3. Create a script to upload all descriptions provided by supplier --> [run_fruit.py](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python/blob/main/run_fruit.py) <br>
-4. Create a script to generate a PDF file as an attached file for email --> [reports.py](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python/blob/main/reports.py) <br>
-5. Create a script to generate an email message with or without attachment and send it --> [emails.py](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python/blob/main/emails.py) <br>
-6. Create a script to generate a customized PDF file --> [report_email.py](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python/blob/main/report_email.py) <br>
-7. Create a script to routinely check CPU, disk, memory usage and hostname resolved --> [health_check.py](https://github.com/ahmdxrzky/automating-real-world-tasks-with-python/blob/main/health_check.py)
+1. Create a script to change format of pictures from .tiff to .jpeg and resize it --> [changeImage.py](https://github.com/ahmdxrzky/google-it-automation-with-python/blob/main/automating_real_world_tasks_with_python/changeImage.py) <br>
+2. Create a script to upload all of manipulated pictures in .jpeg format --> [supplier_image_upload.py](https://github.com/ahmdxrzky/google-it-automation-with-python/blob/main/automating_real_world_tasks_with_python/supplier_image_upload.py) <br>
+3. Create a script to upload all descriptions provided by supplier --> [run_fruit.py](https://github.com/ahmdxrzky/google-it-automation-with-python/blob/main/automating_real_world_tasks_with_python/run_fruit.py) <br>
+4. Create a script to generate a PDF file as an attached file for email --> [reports.py](https://github.com/ahmdxrzky/google-it-automation-with-python/blob/main/automating_real_world_tasks_with_python/reports.py) <br>
+5. Create a script to generate an email message with or without attachment and send it --> [emails.py](https://github.com/ahmdxrzky/google-it-automation-with-python/blob/main/automating_real_world_tasks_with_python/emails.py) <br>
+6. Create a script to generate a customized PDF file --> [report_email.py](https://github.com/ahmdxrzky/google-it-automation-with-python/blob/main/automating_real_world_tasks_with_python/report_email.py) <br>
+7. Create a script to routinely check CPU, disk, memory usage and hostname resolved --> [health_check.py](https://github.com/ahmdxrzky/google-it-automation-with-python/blob/main/automating_real_world_tasks_with_python/health_check.py)
