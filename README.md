@@ -1,4 +1,7 @@
 # Google IT Automation with Python
+<h3> ATTENTION </h3>
+I claim these modules as fully mine. I build these modules from scratch with guidance from Coursera platform as these modules are being used by me to pass learning specialization at Coursera.
+
 <h3> Brief Introduction </h3>
 
 [Google IT Automation with Python](https://www.coursera.org/professional-certificates/google-it-automation) is a specialization offered by Coursera. This specialization consists of six courses, developed by Google and designed to provide IT professionals with in-demand skills, including Python, Git, and IT automation -- that can help them advance their careers. The hands-on curriculum is designed to teach learners how to write code in Python, with a special focus on how this applies to automating tasks in the world of IT support and systems administration. Those who received this certificate passed all graded assessments with a score of 80% of above. They should have a strong foundation in how to use Git and GitHub, troubleshoot and debug complex problems, and apply automation at scale by using configuration management and the Cloud in order to prepare them for more advanced IT Support Specialist or Junior Systems Administrator positions.
